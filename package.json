@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@tanstack/react-query": "^5.69.0",
+    "dotenv": "^16.4.7",
+    "proxy": "http://20.244.56.144"
+
+  }
+}
