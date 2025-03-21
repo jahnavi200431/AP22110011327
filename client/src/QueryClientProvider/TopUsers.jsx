@@ -5,7 +5,7 @@ function TopUsers() {
     const [authToken, setAuthToken] = useState(null);
 
     useEffect(() => {
-        // Step 1: Authenticate to get token
+        
         fetch("http://20.244.56.144/test/auth", {
             method: "POST",
             headers: {
@@ -29,13 +29,13 @@ function TopUsers() {
     }, []);
 
     useEffect(() => {
-        if (!authToken) return;  // Wait until token is available
+        if (!authToken) return;  
 
-        // Step 2: Fetch users with the auth token
+        
         fetch("http://20.244.56.144/test/users", {
             method: "GET",
             headers: {
-                "Authorization": `Bearer ${authToken}`, // Attach token here
+                "Authorization": `Bearer ${authToken}`, 
                 "Content-Type": "application/json",
             },
         })
@@ -45,7 +45,7 @@ function TopUsers() {
             setUsers(data);
         })
         .catch(err => console.error("Error fetching users:", err));
-    }, [authToken]); // Runs when authToken is updated
+    }, [authToken]); 
 
     return (
         <div>
