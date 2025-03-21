@@ -6,7 +6,7 @@ const TrendingPosts = () => {
     useEffect(() => {
         const fetchTrendingPosts = async () => {
             try {
-                // Fetch all posts first
+            
                 const postsResponse = await fetch("http://20.244.56.144/test/posts", {
                     method: "GET",
                     headers: {
@@ -19,7 +19,7 @@ const TrendingPosts = () => {
 
                 if (!postsData.posts || postsData.posts.length === 0) return;
 
-                // Fetch comments for each post
+            
                 const commentsCountMap = {};
                 for (const post of postsData.posts) {
                     const commentsResponse = await fetch(`http://20.244.56.144/test/posts/${post.id}/comments`, {
@@ -35,7 +35,7 @@ const TrendingPosts = () => {
                     commentsCountMap[post.id] = commentsData.comments.length;
                 }
 
-                // Find posts with the maximum comment count
+                
                 const maxComments = Math.max(...Object.values(commentsCountMap));
                 const trending = postsData.posts.filter(post => commentsCountMap[post.id] === maxComments);
 
