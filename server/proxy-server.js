@@ -12,7 +12,7 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const API_BASE_URL = "http://20.244.56.144/test";
 
-// Fetch Users
+
 app.get("/api/users", async (req, res) => {
     try {
         const response = await fetch(`${API_BASE_URL}/users`, {
@@ -29,7 +29,7 @@ app.get("/api/users", async (req, res) => {
     }
 });
 
-// Fetch Posts
+
 app.get("/api/posts", async (req, res) => {
     try {
         const response = await fetch(`${API_BASE_URL}/posts`, {
@@ -46,5 +46,5 @@ app.get("/api/posts", async (req, res) => {
     }
 });
 
-// Start Proxy Server
+
 app.listen(5000, () => console.log("Proxy server running on port 5000"));
